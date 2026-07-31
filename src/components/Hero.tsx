@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { profileData } from "@/data/profile";
 import { Download, ExternalLink, Mail } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -14,9 +15,25 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mb-8"
+          >
+            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl mx-auto">
+              <Image 
+                src="/profile_pic.png" 
+                alt={profileData.hero.name} 
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
               {profileData.hero.name}
