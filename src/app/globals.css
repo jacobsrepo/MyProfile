@@ -30,33 +30,33 @@
 @layer base {
   :root {
     --background: #f8fafc;
-    --foreground: #0f172a;
+    --foreground: #09090b;
     --card: #ffffff;
-    --card-foreground: #0f172a;
-    --primary: #2563eb;
-    --primary-foreground: #f8fafc;
+    --card-foreground: #09090b;
+    --primary: #0891b2;
+    --primary-foreground: #ffffff;
     --border: #e2e8f0;
     --input: #e2e8f0;
     --muted: #f1f5f9;
     --muted-foreground: #64748b;
-    --accent: #f1f5f9;
-    --accent-foreground: #0f172a;
-    --radius: 0.5rem;
+    --accent: #cffafe;
+    --accent-foreground: #0891b2;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: #020617;
+    --background: #09090b;
     --foreground: #f8fafc;
-    --card: #0f172a;
+    --card: #18181b;
     --card-foreground: #f8fafc;
-    --primary: #3b82f6;
-    --primary-foreground: #f8fafc;
-    --border: #1e293b;
-    --input: #1e293b;
-    --muted: #1e293b;
-    --muted-foreground: #94a3b8;
-    --accent: #1e293b;
-    --accent-foreground: #f8fafc;
+    --primary: #06b6d4;
+    --primary-foreground: #000000;
+    --border: #27272a;
+    --input: #27272a;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #164e63;
+    --accent-foreground: #cffafe;
   }
 }
 
@@ -71,18 +71,37 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20 dark:bg-black/20 dark:border-white/10;
+    @apply bg-white/20 backdrop-blur-xl border border-white/30 shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:bg-zinc-950/40 dark:border-white/10 dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)];
   }
   
   .glass-card {
-    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-xl;
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 shadow-lg dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all;
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400;
   }
   
   .bg-gradient-radial {
     background-image: radial-gradient(var(--tw-gradient-stops));
   }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
 }

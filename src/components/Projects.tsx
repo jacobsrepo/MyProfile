@@ -38,22 +38,22 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group glass-card rounded-2xl p-8 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 relative overflow-hidden"
+              className="group glass-card rounded-2xl p-8 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(8,145,178,0.2)] dark:hover:shadow-[0_0_40px_rgba(8,145,178,0.15)] transition-all duration-500 relative overflow-hidden border border-white/20 hover:border-primary/50"
             >
-              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all duration-500 text-primary">
                 {getIconForType(project.type)}
               </div>
               
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-muted-foreground font-medium text-xs mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-xs mb-5 border border-primary/20 shadow-sm">
                 {getIconForType(project.type)}
                 {project.type}
               </div>
               
-              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-emerald-400 transition-all">
                 {project.title}
               </h3>
               
-              <p className="text-muted-foreground mb-6 line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+              <p className="text-muted-foreground mb-6 line-clamp-2 group-hover:line-clamp-none transition-all duration-500">
                 {project.description}
               </p>
               

@@ -9,8 +9,13 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background Gradients */}
-      <div className="absolute top-0 inset-x-0 h-full w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background -z-10" />
+      {/* Background Gradients & Animated Blobs */}
+      <div className="absolute top-0 inset-x-0 h-full w-full bg-background -z-10 overflow-hidden">
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-emerald-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-cyan-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="text-center max-w-4xl mx-auto">
@@ -57,21 +62,21 @@ export default function Hero() {
           >
             <Link
               href="#cv"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25"
+              className="inline-flex items-center px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] hover:shadow-[0_0_30px_rgba(8,145,178,0.6)]"
             >
               <Download className="mr-2" size={20} />
               Download CV
             </Link>
             <Link
               href="#projects"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-card border border-border text-foreground font-semibold hover:bg-muted transition-all shadow-sm"
+              className="inline-flex items-center px-8 py-3.5 rounded-full glass border border-border text-foreground font-semibold hover:bg-white/10 dark:hover:bg-white/5 transition-all"
             >
               <ExternalLink className="mr-2" size={20} />
               View Projects
             </Link>
             <Link
               href="#contact"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-card border border-border text-foreground font-semibold hover:bg-muted transition-all shadow-sm"
+              className="inline-flex items-center px-8 py-3.5 rounded-full glass border border-border text-foreground font-semibold hover:bg-white/10 dark:hover:bg-white/5 transition-all"
             >
               <Mail className="mr-2" size={20} />
               Contact Me
@@ -96,15 +101,18 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-2"
+            className="flex flex-wrap justify-center gap-3 mt-4"
           >
-            {profileData.hero.badges.map((badge) => (
-              <span
+            {profileData.hero.badges.map((badge, i) => (
+              <motion.span
                 key={badge}
-                className="px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7 + i * 0.1 }}
+                className="px-4 py-1.5 text-sm font-semibold rounded-full glass text-foreground border border-primary/20 hover:border-primary/50 hover:text-primary transition-colors cursor-default"
               >
                 {badge}
-              </span>
+              </motion.span>
             ))}
           </motion.div>
         </div>
