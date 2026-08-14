@@ -25,12 +25,12 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="flex justify-center mb-8"
           >
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl mx-auto">
+            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl mx-auto bg-muted/30">
               <Image 
                 src="/profile_pic.png" 
                 alt={profileData.hero.name} 
                 fill
-                className="object-cover"
+                className="object-cover scale-[0.85] translate-y-1"
                 priority
               />
             </div>
@@ -60,13 +60,15 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-wrap justify-center gap-4 mb-12"
           >
-            <Link
-              href="#cv"
+            <a
+              href="/Sam_Jacob_Lebenslauf_Data_AI_Engineer.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] hover:shadow-[0_0_30px_rgba(8,145,178,0.6)]"
             >
               <Download className="mr-2" size={20} />
               Download CV
-            </Link>
+            </a>
             <Link
               href="#projects"
               className="inline-flex items-center px-8 py-3.5 rounded-full glass border border-border text-foreground font-semibold hover:bg-white/10 dark:hover:bg-white/5 transition-all"
