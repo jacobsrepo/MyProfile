@@ -18,8 +18,8 @@ export const profileData = {
   contact: {
     email: "jacobsam.work@gmail.com",
     location: "Germany",
-    linkedin: "https://linkedin.com", // Placeholder
-    github: "https://github.com", // Placeholder
+    linkedin: "https://www.linkedin.com/in/jacob1327/", 
+    github: "https://github.com/jacobsrepo", 
     xing: "https://xing.com", // Placeholder
   },
   recruiterSummary: {
