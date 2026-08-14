@@ -25,12 +25,12 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="flex justify-center mb-8"
           >
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl mx-auto bg-muted/30">
+            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl mx-auto">
               <Image 
-                src="/profile_pic.png" 
+                src="/myselfgood_.png" 
                 alt={profileData.hero.name} 
                 fill
-                className="object-cover scale-[0.85] translate-y-1"
+                className="object-cover"
                 priority
               />
             </div>

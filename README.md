@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/profile_pic.png" alt="Sam Jacob Profile" width="150" style="border-radius: 50%; border: 4px solid #3b82f6;"/>
+  <img src="public/myselfgood_.png" alt="Sam Jacob Profile" width="150" style="border-radius: 50%; border: 4px solid #3b82f6;"/>
 
   # Sam Jacob | Data & AI Engineer Portfolio
   
